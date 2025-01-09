@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
+
+body {
+    font-family: "Poller One", serif;
+    background-image: url("assets/images-jpg/sky.jpg");
+    color: #eedb00;
+    background-attachment: fixed;
+}
+
+header, footer {
+    background-color: rgba(60, 69, 67, 0.6);
+}
