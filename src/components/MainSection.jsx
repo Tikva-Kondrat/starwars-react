@@ -14,13 +14,13 @@ const MainSection = () => {
 
                 During the battle, Rebel
                 spies managed to steal secret
-                plans to the Empire's
+                plans to the Empire
                 ultimate weapon, the DEATH
                 STAR, an armored space
                 station with enough power
                 to destroy an entire planet.
 
-                Pursued by the Empire's
+                Pursued by the Empire
                 sinister agents, Princess
                 Leia races home aboard her
                 starship, custodian of the
