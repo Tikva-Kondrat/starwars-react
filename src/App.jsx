@@ -7,11 +7,11 @@ import './App.css'
 function App() {
 
     return (
-        <body className="container-fluid">
+        <div className="container-fluid">
         <Header/>
         <MainSection/>
         <Footer/>
-        </body>
+        </div>
     )
 }
 

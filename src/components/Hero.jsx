@@ -1,6 +1,6 @@
 import mainCharacter from '../assets/images-jpg/main.jpg'
 
-const MainHero = () => {
+const Hero = () => {
     return (
         <section className="float-start w-25 me-3">
             <img className="w-100" src={mainCharacter} alt="Hero"/>
@@ -8,4 +8,4 @@ const MainHero = () => {
     );
 };
 
-export default MainHero;
+export default Hero;
