@@ -8,10 +8,11 @@ import friend7 from "../assets/images-jpg/friend7.jpg"
 import friend8 from "../assets/images-jpg/friend8.jpg"
 import friend9 from "../assets/images-jpg/friend9.jpg"
 
+export const maxEpisodeCount = 6
 export const navItems = ['Home', 'About', 'Start wars', 'Contact'];
 export const frields = [friend1, friend2, friend3, friend4, friend5, friend6, friend7, friend8, friend9];
 
-export const openingCrawl = `It is a period of civil war.
+export const defaultOpeningCrawl = `It is a period of civil war.
             Rebel spaceships, striking
             from a hidden base, have won
             their first victory against

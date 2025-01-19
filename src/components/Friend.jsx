@@ -6,7 +6,7 @@ const Friend = ({imgSrc, pos}) => {
         case 9 :  styles += "bottomRight"
     }
     return (
-        <img className= {styles} src={imgSrc} alt="Friend"/>
+        <img className={styles} src={imgSrc} alt="Friend"/>
     );
 };
 
