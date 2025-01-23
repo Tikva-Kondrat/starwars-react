@@ -1,0 +1,9 @@
+.spinner {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    color: #eedb00;
+    text-align: justify;
+    background-color: red;
+    border: 5px solid white;
+}

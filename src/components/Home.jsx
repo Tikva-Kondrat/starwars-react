@@ -1,15 +1,15 @@
-import Hero from './Hero.jsx';
+import Hero from "./walker/Hero.jsx";
 import TeamSection from "./TeamSection.jsx";
 import Description from "./Description.jsx";
 
-const MainSection = () => {
+const Home = () => {
     return (
         <main className="clearfix">
             <Hero/>
             <TeamSection/>
-            <Description />
+            <Description/>
         </main>
     );
 };
 
-export default MainSection;
+export default Home;
