@@ -11,6 +11,7 @@ import friend9 from "../assets/images-jpg/friend9.jpg"
 export const navItems = ['Home', 'About', 'Start wars', 'Contact'];
 export const frields = [friend1, friend2, friend3, friend4, friend5, friend6, friend7, friend8, friend9];
 export const defaultExpireNumOfDays = 30
+export const noInfoMessage = 'Unfortunately, no information'
 
 export const defaultOpeningCrawl = `It is a period of civil war.
             Rebel spaceships, striking

@@ -4,7 +4,6 @@ import {getSkyWalkerInfoFromLocalStorage, setSkyWalkerInfoIntoLocalStorage} from
 import {hasExpired} from "../utils/utilFunctions.js";
 import Spinner from "./utilComponents/Spinner.jsx";
 import WalkerInfo from "./walker/WalkerInfo.jsx";
-import log from "eslint-plugin-react/lib/util/log.js";
 
 const AboutMe = () => {
     const [isLoading, setIsLoading] = useState(false)
@@ -26,7 +25,7 @@ const AboutMe = () => {
                 setWalkerInfo(data)
                 setSkyWalkerInfoIntoLocalStorage(data)
             },
-            () => setWalkerInfo('Unfortunately, no info'),
+            () => setWalkerInfo({}),
             () => setIsLoading(false)
         )
     }

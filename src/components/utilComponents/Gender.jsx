@@ -1,6 +1,6 @@
 import {IoIosMan, IoIosWoman} from "react-icons/io";
-// todo: sometimes I get underfined value. Don't understand why
-const Gender = ({gender = 'male'}) => {
+
+const Gender = ({gender}) => {
     return (
         <div>
             Gender:
