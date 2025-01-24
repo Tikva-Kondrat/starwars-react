@@ -5,8 +5,10 @@ const Navigation = ( {changePage}) => {
     return (
         <nav>
             <ul className="nav fixed-top mt-2 ms-5">
-                {/* eslint-disable-next-line react/jsx-key */}
-                {navItems.map(item => < NavItem itemTitle={item} changePage = {changePage} />)}
+                {navItems.map((item, index) => < NavItem
+                    key = {`NavItem-${index}`}
+                    itemTitle={item}
+                    changePage = {changePage} />)}
             </ul>
         </nav>
     );

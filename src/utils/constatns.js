@@ -12,6 +12,15 @@ export const navItems = ['Home', 'About', 'Start wars', 'Contact'];
 export const frields = [friend1, friend2, friend3, friend4, friend5, friend6, friend7, friend8, friend9];
 export const defaultExpireNumOfDays = 30
 export const noInfoMessage = 'Unfortunately, no information'
+export const nameValidationWrongFormatMsg = 'Name and last name must contain letters and hyphen/space for double names'
+export const nameValidationWrongLengthMsg = 'Name and last name must be at least 2 characters long'
+export const validationRequiredFieldMsg = 'Required field'
+
+export const nameInputRequirements = {
+    required: true,
+    minLength: 3,
+    pattern: /^[A-Z]+(-)?( )?[A-Z]+$/i
+}
 
 export const defaultOpeningCrawl = `It is a period of civil war.
             Rebel spaceships, striking

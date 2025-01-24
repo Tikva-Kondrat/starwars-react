@@ -20,7 +20,7 @@ const Description = () => {
             },
             () => setDescription(defaultOpeningCrawl),
             () => setIsLoading(false)
-        ).then(() => true)
+        ).then()
     }
 
     useEffect(
@@ -34,7 +34,7 @@ const Description = () => {
 
     return (
         isLoading
-            ? <Spinner />
+            ? <Spinner/>
             : <p className="farGalaxy">{description}</p>
     )
 };

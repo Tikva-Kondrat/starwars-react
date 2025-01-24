@@ -2,7 +2,7 @@ import Home from "./Home.jsx";
 import {navItems} from "../utils/constatns.js";
 import AboutMe from "./AboutMe.jsx";
 import StarWars from "./StarWars.jsx";
-import Contact from "./Contact.jsx";
+import Contact from "./contactform/Contact.jsx";
 
 const Main = ({page}) => {
         switch (page) {
