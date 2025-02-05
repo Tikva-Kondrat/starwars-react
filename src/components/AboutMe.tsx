@@ -2,7 +2,9 @@ import {useEffect, useState} from "react";
 import {makeServerRequest, requestSkyWalkerDetails} from "../api/apiRequests.js";
 import {getSkyWalkerInfoFromLocalStorage, setSkyWalkerInfoIntoLocalStorage} from "../storage/storingHadling.js";
 import {hasExpired} from "../utils/utilFunctions.js";
+
 import Spinner from "./utilComponents/Spinner.jsx";
+
 import WalkerInfo from "./walker/WalkerInfo.jsx";
 
 const AboutMe = () => {
@@ -21,7 +23,7 @@ const AboutMe = () => {
         setIsLoading(true)
         makeServerRequest(
             requestSkyWalkerDetails,
-            (data) => {
+            (data: any) => {
                 setWalkerInfo(data)
                 setSkyWalkerInfoIntoLocalStorage(data)
             },
@@ -41,6 +43,7 @@ const AboutMe = () => {
 
     return (
         isLoading
+
             ? <Spinner/>
             :  <WalkerInfo info = {walkerInfo} />
     );

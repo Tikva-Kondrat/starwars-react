@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import {defaultOpeningCrawl} from "../utils/constatns.js";
 import {requestRandomEpisodeDetails, makeServerRequest} from "../api/apiRequests.js";
 import "../styles/spinnerStyle.css"
+// @ts-expect-error TS(6142): Module './utilComponents/Spinner.jsx' was resolved... Remove this comment to see the full error message
 import Spinner from "./utilComponents/Spinner.jsx";
 import {getOpeningCrawlFromSessionStorage, setOpeningCrawlIntoSessionStorage} from "../storage/storingHadling.js";
 
@@ -13,7 +14,7 @@ const Description = () => {
         setIsLoading(true)
         makeServerRequest(
             requestRandomEpisodeDetails,
-            (data) => {
+            (data: any) => {
                 const openingCrawl = data.opening_crawl
                 setDescription(openingCrawl)
                 setOpeningCrawlIntoSessionStorage(openingCrawl)
@@ -34,7 +35,9 @@ const Description = () => {
 
     return (
         isLoading
+            // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
             ? <Spinner/>
+            // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
             : <p className="context__text">{description}</p>
     )
 };

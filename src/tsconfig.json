@@ -1,10 +1,22 @@
 {
+  "include": ["src"],
   "compilerOptions": {
-    "target": "es2016",
+    "target": "es5",
     "module": "commonjs",
+    "lib": ["dom", "es2015", "es2016"],
+    "allowJs": true,
+    "checkJs": false,
+    "jsx": "react",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "baseUrl": "./src",
+    "typeRoots": [
+      "./src/declaration.d.ts",
+      "./node_modules/@types"
+    ],
     "skipLibCheck": true
   }
 }

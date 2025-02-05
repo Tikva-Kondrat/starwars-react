@@ -1,11 +1,20 @@
+
 import friend1 from "../assets/images-jpg/friend1.jpg"
+
 import friend2 from "../assets/images-jpg/friend2.jpg"
+
 import friend3 from "../assets/images-jpg/friend3.jpg"
+
 import friend4 from "../assets/images-jpg/friend4.jpg"
+
 import friend5 from "../assets/images-jpg/friend5.jpg"
+
 import friend6 from "../assets/images-jpg/friend6.jpg"
+
 import friend7 from "../assets/images-jpg/friend7.jpg"
+
 import friend8 from "../assets/images-jpg/friend8.jpg"
+
 import friend9 from "../assets/images-jpg/friend9.jpg"
 
 export const navItems = ['Home', 'About', 'Start wars', 'Contact'];
