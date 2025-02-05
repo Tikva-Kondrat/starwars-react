@@ -1,8 +1,9 @@
+import Button from "./ui/button.jsx";
+
+
 const NavItem = ({itemTitle, changePage}) => {
     return (
-        <li onClick={() => {
-            changePage(itemTitle)
-        }} className="nav-item btn btn-danger mx-1">{itemTitle}</li>
+        <Button callback={() => changePage(itemTitle)} className="text-lg ">{itemTitle}</Button>
     );
 };
 

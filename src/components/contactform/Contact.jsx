@@ -1,5 +1,4 @@
 import PlanetSelector from "./PlanetSelector.jsx";
-import './Contact.css'
 import {Controller, useForm} from "react-hook-form";
 import {nameInputRequirements} from "../../utils/constatns.js";
 import Select from "react-select";
@@ -27,10 +26,13 @@ const Contact = () => {
     ];
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <div className={"flex w-full flex-wrap justify-center items-center my-4 mb-96"}>
+
+
+        <form onSubmit={handleSubmit(onSubmit)} className={"flex w-72 flex-col flex-wrap justify-center mb-8 "}>
             {/* first name*/}
-            <label htmlFor="fname">First Name</label>
-            <input
+            <label htmlFor="fname" className={"text-center text-xl font-semibold my-2"}>First Name</label>
+            <input className={"w-full py-2 px-3 my-1 border border-base-color rounded-2xl"}
                 type="text"
                 name="firstName"
                 {...register("firstName",
@@ -39,8 +41,8 @@ const Contact = () => {
             {handleNameInputErrors('firstName', errors)}
 
             {/* last name*/}
-            <label htmlFor="lname">Last Name</label>
-            <input
+            <label className={"text-center text-xl font-semibold my-2"} htmlFor="lname">Last Name</label>
+            <input className={"w-full py-2 px-3 my-1 border border-base-color rounded-2xl"}
                 type="text"
                 name="lastName"
                 {...register("lastName",
@@ -49,7 +51,7 @@ const Contact = () => {
             {handleNameInputErrors('lastName', errors)}
 
             {/* planet*/}
-            <label htmlFor="planet">Planet</label>
+            <label className={"text-center text-xl font-semibold my-2"} htmlFor="planet" >Planet</label>
             <PlanetSelector
                 {...register("planet")}
             />
@@ -57,16 +59,17 @@ const Contact = () => {
             {/*example from sandbox
             // todo: delete this sample code
             */}
-            <label>Select Department of Interest</label>
+            <label className={"text-center text-xl font-semibold my-2"}>Select Department of Interest</label>
             <Controller
                 name="department"
                 control={control}
                 render={({field}) => (
-                    <Select {...field} isMulti = {false} options={departments}/>
+                    <Select {...field} isMulti = {false}  options={departments} className={"w-full bg-black bg-black my-1 py-2 px-3 border border-base-color rounded-2xl"}/>
                 )}
             />
-            <input type="submit" value="Submit"/>
+            <input className={"w-full text-xl hover:bg-grean-salat-color my-2 bg-buttom-sub cursor-pointer py-2 px-3 rounded-2xl text-white"} type="submit" value="Submit"/>
         </form>
+        </div>
     );
 };
 

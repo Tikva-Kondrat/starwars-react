@@ -3,8 +3,8 @@ import Friend from "./Friend.jsx";
 
 const TeamSection = () => {
     return (
-        <section className="float-end w-50 row border rounded-bottom-4 ms-2 me-0">
-            <h2 className="col-12 text-center">Dream team</h2>
+        <section className="float-right border border-base-color rounded-b-2xl w-1/2 grid grid-cols-3 gap-1">
+            <h2 className="col-span-3 text-center">Dream team</h2>
             { frields.map((imgSrc, index) =>
                 < Friend
                     key={`Friend-${index}`}

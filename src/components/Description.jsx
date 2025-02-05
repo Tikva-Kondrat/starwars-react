@@ -35,7 +35,7 @@ const Description = () => {
     return (
         isLoading
             ? <Spinner/>
-            : <p className="farGalaxy">{description}</p>
+            : <p className="context__text">{description}</p>
     )
 };
 

@@ -4,7 +4,7 @@ import Description from "./Description.jsx";
 
 const Home = () => {
     return (
-        <main className="clearfix">
+        <main className="">
             <Hero/>
             <TeamSection/>
             <Description/>
