@@ -16,12 +16,13 @@ export const requestSkyWalkerDetails = () =>
 export const requestPlanets = () =>
     fetch(`${baseUrl}planets`)
 
+
 export const makeServerRequest = async (
     request: any,
     actionOnServerOkResponse: any,
     actionOnServerErrorResponse: any,
     actionOnRequestFulfilled: () => {}
-) => {
+):Promise<void> => {
     try {
         const response = await request()
         if (response.status === 200) {

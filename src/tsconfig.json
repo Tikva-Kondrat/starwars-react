@@ -1,13 +1,14 @@
 {
   "include": ["src"],
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2016",
     "module": "commonjs",
-    "lib": ["dom", "es2015", "es2016"],
+    "lib": ["dom", "ES2015", "ES2016"],
     "allowJs": true,
     "checkJs": false,
     "jsx": "react",
     "esModuleInterop": true,
+    "types": ["es6-promise"],
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitAny": false,

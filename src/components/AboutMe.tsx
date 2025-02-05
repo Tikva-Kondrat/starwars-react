@@ -27,8 +27,8 @@ const AboutMe = () => {
                 setWalkerInfo(data)
                 setSkyWalkerInfoIntoLocalStorage(data)
             },
-            () => setWalkerInfo({}),
-            () => setIsLoading(false)
+            ():any => setWalkerInfo({}),
+            ():any => setIsLoading(false)
         )
     }
 
