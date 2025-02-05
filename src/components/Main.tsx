@@ -1,5 +1,5 @@
 import Home from "./Home.jsx";
-import {navItems} from "../utils/constatns.js";
+import {navItems} from "../utils/constatns.ts";
 import AboutMe from "./AboutMe.jsx";
 import StarWars from "./StarWars.jsx";
 import Contact from "./contactform/Contact.jsx";

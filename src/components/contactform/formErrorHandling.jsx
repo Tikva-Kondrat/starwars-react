@@ -2,7 +2,7 @@ import {
     nameValidationWrongFormatMsg,
     nameValidationWrongLengthMsg,
     validationRequiredFieldMsg
-} from "../../utils/constatns.js";
+} from "../../utils/constatns.ts";
 
 export const handleNameInputErrors = (inputName, errors) => {
     let errorMsg

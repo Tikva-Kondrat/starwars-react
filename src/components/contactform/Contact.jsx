@@ -1,6 +1,6 @@
 import PlanetSelector from "./PlanetSelector.jsx";
 import {Controller, useForm} from "react-hook-form";
-import {nameInputRequirements} from "../../utils/constatns.js";
+import {nameInputRequirements} from "../../utils/constatns.ts";
 import Select from "react-select";
 import {handleNameInputErrors} from "./formErrorHandling.jsx";
 

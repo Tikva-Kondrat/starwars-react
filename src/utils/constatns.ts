@@ -8,8 +8,8 @@ import friend7 from "../assets/images-jpg/friend7.jpg"
 import friend8 from "../assets/images-jpg/friend8.jpg"
 import friend9 from "../assets/images-jpg/friend9.jpg"
 
-export const navItems = ['Home', 'About', 'Start wars', 'Contact'];
-export const frields = [friend1, friend2, friend3, friend4, friend5, friend6, friend7, friend8, friend9];
+export const navItems: string[] = ['Home', 'About', 'Start wars', 'Contact'];
+export const friends = [friend1, friend2, friend3, friend4, friend5, friend6, friend7, friend8, friend9];
 export const defaultExpireNumOfDays = 30
 export const noInfoMessage = 'Unfortunately, no information'
 export const nameValidationWrongFormatMsg = 'Name and last name must contain letters and hyphen/space for double names'

@@ -1,4 +1,4 @@
-import {defaultExpireNumOfDays} from "./constatns.js";
+import {defaultExpireNumOfDays} from "./constatns.ts";
 
 /**
  * Returns random numbers form 1 to upper limit

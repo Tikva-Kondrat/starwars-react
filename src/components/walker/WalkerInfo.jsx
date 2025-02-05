@@ -1,5 +1,5 @@
 import Gender from "../utilComponents/Gender.jsx";
-import {noInfoMessage} from "../../utils/constatns.js";
+import {noInfoMessage} from "../../utils/constatns.ts";
 
 const WalkerInfo = ({info}) => {
     const {name, gender, hair_color, eye_color, height, mass} = info

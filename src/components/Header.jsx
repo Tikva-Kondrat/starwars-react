@@ -1,4 +1,4 @@
-import Navigation from "./Navigation.jsx";
+import Navigation from "./Navigation.tsx";
 
 const Header = ({changePage}) => {
     return (

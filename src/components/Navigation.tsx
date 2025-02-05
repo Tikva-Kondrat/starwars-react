@@ -1,5 +1,5 @@
-import NavItem from "./NavItem.jsx";
-import {navItems} from "../utils/constatns.js";
+import NavItem from "./NavItem.tsx";
+import {navItems} from "../utils/constatns.ts";
 
 const Navigation = ( {changePage}) => {
     return (

@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {defaultOpeningCrawl} from "../utils/constatns.js";
+import {defaultOpeningCrawl} from "../utils/constatns.ts";
 import {requestRandomEpisodeDetails, makeServerRequest} from "../api/apiRequests.js";
 import "../styles/spinnerStyle.css"
 import Spinner from "./utilComponents/Spinner.jsx";

@@ -1,4 +1,4 @@
-import {starWarsInfo} from "../utils/constatns.js";
+import {starWarsInfo} from "../utils/constatns.ts";
 
 const StarWars = () => {
     return (
