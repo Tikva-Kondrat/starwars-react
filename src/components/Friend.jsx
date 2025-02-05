@@ -1,9 +1,9 @@
 const Friend = ({imgSrc, pos}) => {
-    let styles = "col-4 p-1 "
+    let styles = "w-full"
     switch (pos) {
-        case 7 :  styles += "bottomLeft"
+        case 7 :  styles += "rounded-bl-2xl"
             break;
-        case 9 :  styles += "bottomRight"
+        case 9 :  styles += "rounded-br-2xl"
     }
     return (
         <img className={styles} src={imgSrc} alt="Friend"/>

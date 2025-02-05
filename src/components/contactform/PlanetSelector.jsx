@@ -17,9 +17,9 @@ const PlanetSelector = () => {
         [])
 
     return (
-        <select id="planet" name="planet">
+        <select id="planet" name="planet" className={"w-full bg- my-1 py-2 px-3 border border-base-color rounded-2xl"} >
             {planets.map((planet, index) =>
-                <option key={`planet${index}`}>{planet}</option>)}
+                <option className={"bg-black"} key={`planet${index}`}>{planet}</option>)}
         </select>
     );
 };

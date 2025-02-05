@@ -1,12 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
+@import "tailwindcss";
 
-body {
-    font-family: "Poller One", serif;
-    background-image: url("assets/images-jpg/sky.jpg");
-    color: #eedb00;
-    background-attachment: fixed;
+@layer base{
+    body {
+        @apply font-poller;
+        @apply text-base-color;
+        @apply bg-sky;
+        @apply bg-fixed;
+    }
+    /*spinner*/
+    .spinner{
+        @apply w-40;
+        @apply h-40;
+        @apply relative;
+        @apply border border-white border-solid;
+        @apply rounded-full;
+        @apply rotate-45;
+        @apply box-border;
+        @apply mx-150;
+    }
+    .spinner::before {
+        content: "";
+        @apply absolute;
+        @apply box-border;
+        @apply rounded-full;
+        inset:-10px;
+        border:10px solid #FF3D00;
+        animation: prixClipFix 2s infinite linear;
+    }
+
+    @keyframes prixClipFix {
+        0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+        25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+        50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+        75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+        100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+    }
+
+    /*button */
+
+
+    .button__elem{
+        @apply bg-red-color;
+        @apply border-2;
+        @apply  rounded-sm;
+        @apply p-2;
+        @apply text-center;
+        @apply cursor-pointer;
+        @apply border-black;
+    }
+
+    .context__text{
+        @apply text-size;
+        @apply tracking-hightes;
+        @apply leading-12;
+        @apply text-justify;
+        @apply p-0.5;
+    }
 }
-
-header, footer {
-    background-color: rgba(60, 69, 67, 0.6);
+@theme{
+    --color-grey-color: rgba(60, 69, 67, 0.6);
+    --color-base-color: #eedb00;
+    --font-poller: 'Poller One', serif;
+    --background-image-sky: url("assets/images-jpg/sky.jpg");
+    --color-red-color:rgba(204, 3, 35, 0.5);
+    --color-buttom-sub: rgba(55, 71, 9, 0.75);
+    --shadow-hero: 10px 10px rgba(60, 69, 67, 0.6);
+    --color-grean-salat-color: #45a049;
+    --text-size: 2em;
+    --tracking-hightes: 0.2em;
 }
