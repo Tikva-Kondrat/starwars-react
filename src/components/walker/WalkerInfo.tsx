@@ -1,7 +1,19 @@
-import Gender from "../utilComponents/Gender.jsx";
+import Gender from "../utilComponents/Gender.tsx";
 import {noInfoMessage} from "../../utils/constatns.ts";
+import * as React from "react";
 
-const WalkerInfo = ({info}) => {
+interface WalkerInfoProps {
+    info: {
+        name: string;
+        gender: string;
+        hair_color: string;
+        eye_color: string;
+        height: string;
+        mass: string;
+    }
+}
+
+const WalkerInfo:React.FC<WalkerInfoProps> = ({info}) => {
     const {name, gender, hair_color, eye_color, height, mass} = info
     return (
         name

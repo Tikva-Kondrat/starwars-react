@@ -1,6 +1,11 @@
 import {IoIosMan, IoIosWoman} from "react-icons/io";
+import * as React from "react";
 
-const Gender = ({gender}) => {
+interface  GenderType {
+    gender: string,
+}
+
+const Gender:React.FC<GenderType> = ({gender} ) => {
     return (
         <div>
             Gender:
