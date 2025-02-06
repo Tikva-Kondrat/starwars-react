@@ -1,7 +1,6 @@
 import PlanetSelector from "./PlanetSelector.tsx";
 import {useForm} from "react-hook-form";
 import {nameInputRequirements} from "../../utils/constatns.ts";
-// import Select from "react-select";
 import {handleNameInputErrors} from "./formErrorHandling.tsx";
 
 interface FormData {
@@ -21,14 +20,6 @@ const Contact = () => {
     const onSubmit = (data: FormData):void => {
         console.log(data);
     }
-
-   /* // todo: delete this sample code
-    const departments = [
-        { value: "Computer-Science", label: "Computer Science" },
-        { value: "Physics", label: "Physics" },
-        { value: "Chemistry", label: "Chemistry" },
-        { value: "Mathematics", label: "Mathematics" }
-    ];*/
 
     return (
         <div className={"flex w-full flex-wrap justify-center items-center my-4 mb-96"}>
@@ -59,17 +50,6 @@ const Contact = () => {
                 {...register("planet")}
             />
 
-            {/*example from sandbox
-            // todo: delete this sample code
-            */}
-            {/*<label className={"text-center text-xl font-semibold my-2"}>Select Department of Interest</label>*/}
-            {/*<Controller*/}
-            {/*    name="department"*/}
-            {/*    control={control}*/}
-            {/*    render={({field}) => (*/}
-            {/*        <Select {...field} isMulti = {false}  options={departments} className={"w-full bg-black bg-black my-1 py-2 px-3 border border-base-color rounded-2xl"}/>*/}
-            {/*    )}*/}
-            {/*/>*/}
             <input className={"w-full text-xl hover:bg-grean-salat-color my-2 bg-buttom-sub cursor-pointer py-2 px-3 rounded-2xl text-white"} type="submit" value="Submit"/>
         </form>
         </div>

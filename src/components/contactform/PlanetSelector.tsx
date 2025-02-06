@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {makeServerRequest, requestPlanets} from "../../api/apiRequests.js";
+import {makeServerRequest, requestPlanets} from "../../api/apiRequests.ts";
 interface Planet {
     name: string;
 }

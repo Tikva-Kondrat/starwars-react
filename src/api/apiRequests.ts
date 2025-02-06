@@ -1,4 +1,4 @@
-import {getRandomNumber} from "../utils/utilFunctions.js";
+import {getRandomNumber} from "../utils/utilFunctions.ts";
 
 const maxEpisodeCount = 6
 const skyWalkerId = 1

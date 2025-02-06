@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {defaultOpeningCrawl} from "../utils/constatns.ts";
-import {requestRandomEpisodeDetails, makeServerRequest} from "../api/apiRequests.js";
+import {requestRandomEpisodeDetails, makeServerRequest} from "../api/apiRequests.ts";
 import "../styles/spinnerStyle.css"
 import Spinner from "./utilComponents/Spinner.tsx";
 import {getOpeningCrawlFromSessionStorage, setOpeningCrawlIntoSessionStorage} from "../storage/storingHadling.ts";

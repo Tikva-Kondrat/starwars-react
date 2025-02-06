@@ -5,7 +5,7 @@ import {defaultExpireNumOfDays} from "./constatns.ts";
  * @param upperLimit
  * @returns {number}
  */
-export const getRandomNumber = (upperLimit) =>
+export const getRandomNumber = (upperLimit: number): number =>
     (Math.floor(Math.random() * 10) % upperLimit) + 1
 
 /**
@@ -14,7 +14,7 @@ export const getRandomNumber = (upperLimit) =>
  * @param date - date to check in string format
  * @returns {boolean} true if the {date} has expired else false
  */
-export const hasExpired = (date, numOfDays = defaultExpireNumOfDays) => {
+export const hasExpired = (date: string, numOfDays = defaultExpireNumOfDays): boolean => {
     const dateToCheck = new Date(date);
     // Calculating the time difference
     const timeDiff = (new Date()).getTime() - dateToCheck.getTime();

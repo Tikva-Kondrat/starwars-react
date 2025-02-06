@@ -1,4 +1,9 @@
-const Friend = ({imgSrc, pos}) => {
+type Props = {
+    imgSrc: string,
+    pos: number
+}
+
+const Friend = ({imgSrc, pos}: Props) => {
     let styles = "w-full"
     switch (pos) {
         case 7 :  styles += "rounded-bl-2xl"
