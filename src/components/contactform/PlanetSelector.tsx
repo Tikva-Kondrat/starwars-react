@@ -1,14 +1,16 @@
 import {useEffect, useState} from "react";
 import {makeServerRequest, requestPlanets} from "../../api/apiRequests.js";
-
+interface Planet {
+    name: string;
+}
 // todo: add controller from react-select
 const PlanetSelector = () => {
-    const [planets, setPlanets] = useState(['Earth'])
+    const [planets, setPlanets] = useState<string[]>(['Earth'])
 
     useEffect(() => {
             makeServerRequest(
                 requestPlanets,
-                (planetList) =>
+                (planetList:Planet[]):void =>
                     // create new list of planets' names from server response
                     setPlanets(planetList.map(planet => planet.name)),
                 // in case of error we stay on Earth

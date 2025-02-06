@@ -1,6 +1,6 @@
-import Hero from "./walker/Hero.jsx";
-import TeamSection from "./TeamSection.jsx";
-import Description from "./Description.jsx";
+import Hero from "./walker/Hero.tsx";
+import TeamSection from "./TeamSection.tsx";
+import Description from "./Description.tsx";
 
 const Home = () => {
     return (

@@ -2,18 +2,22 @@ import {useEffect, useState} from "react";
 import {defaultOpeningCrawl} from "../utils/constatns.ts";
 import {requestRandomEpisodeDetails, makeServerRequest} from "../api/apiRequests.js";
 import "../styles/spinnerStyle.css"
-import Spinner from "./utilComponents/Spinner.jsx";
-import {getOpeningCrawlFromSessionStorage, setOpeningCrawlIntoSessionStorage} from "../storage/storingHadling.js";
+import Spinner from "./utilComponents/Spinner.tsx";
+import {getOpeningCrawlFromSessionStorage, setOpeningCrawlIntoSessionStorage} from "../storage/storingHadling.ts";
+
+interface InfoEpisode{
+    opening_crawl: string,
+}
 
 const Description = () => {
-    const [description, setDescription] = useState(defaultOpeningCrawl)
-    const [isLoading, setIsLoading] = useState(false)
+    const [description, setDescription] = useState<string>(defaultOpeningCrawl)
+    const [isLoading, setIsLoading] = useState<boolean>(false)
 
     const makeOpeningCrawlServerRequest = () => {
         setIsLoading(true)
         makeServerRequest(
             requestRandomEpisodeDetails,
-            (data) => {
+            (data: InfoEpisode):void => {
                 const openingCrawl = data.opening_crawl
                 setDescription(openingCrawl)
                 setOpeningCrawlIntoSessionStorage(openingCrawl)
