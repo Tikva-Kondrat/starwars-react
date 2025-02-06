@@ -3,14 +3,14 @@ import {
     nameValidationWrongLengthMsg,
     validationRequiredFieldMsg
 } from "../../utils/constatns.ts";
-import {FieldError} from "react-hook-form";
+import {FieldErrors} from "react-hook-form";
 
-export const handleNameInputErrors = (inputName: "firstName"|"lastName", errors:FieldError) => {
+export const handleNameInputErrors = (inputName: "firstName" | "lastName", errors?: FieldErrors<any>) => {
+    if (!errors || !errors[inputName]) return null;
 
-    const inputError = errors[inputName];
-    if (!inputError) return null
+    const inputError = errors[inputName]!;
+    let errorMsg: string = "";
 
-    let errorMsg: string;
     switch (inputError.type) {
         case 'required': errorMsg = validationRequiredFieldMsg; break;
         case 'pattern': errorMsg = nameValidationWrongFormatMsg; break;
