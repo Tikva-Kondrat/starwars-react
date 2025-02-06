@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import {makeServerRequest, requestSkyWalkerDetails} from "../api/apiRequests.js";
-import {getSkyWalkerInfoFromLocalStorage, setSkyWalkerInfoIntoLocalStorage} from "../storage/storingHadling.js";
+import {getSkyWalkerInfoFromLocalStorage, setSkyWalkerInfoIntoLocalStorage} from "../storage/storingHadling.ts";
 import {hasExpired} from "../utils/utilFunctions.js";
-import Spinner from "./utilComponents/Spinner.jsx";
+import Spinner from "./utilComponents/Spinner.tsx";
 import WalkerInfo from "./walker/WalkerInfo.tsx";
 
 const AboutMe = () => {
