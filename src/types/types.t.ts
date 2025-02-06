@@ -8,3 +8,7 @@ export type SkyWalkerDetails = {
     height?: string;
     mass?: string;
 }
+
+
+/*params api*/
+export type RequestWithoutParams = () => Promise<Response>;

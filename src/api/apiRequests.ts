@@ -1,4 +1,5 @@
 import {getRandomNumber} from "../utils/utilFunctions.ts";
+import {RequestWithoutParams} from "../types/types.t.ts";
 
 const maxEpisodeCount = 6
 const skyWalkerId = 1
@@ -8,7 +9,7 @@ export const baseUrl = 'https://sw-info-api.herokuapp.com/v1/'
 export const requestRandomEpisodeDetails = () =>
     fetch(`${baseUrl}films/${getRandomNumber(maxEpisodeCount)}`)
 
-const requestPersonByIdDetails = (id) =>
+const requestPersonByIdDetails = (id:number) =>
     fetch(`${baseUrl}peoples/${id}`)
 
 export const requestSkyWalkerDetails = () =>
@@ -18,9 +19,9 @@ export const requestPlanets = () =>
     fetch(`${baseUrl}planets`)
 
 export const makeServerRequest = async (
-    request,
-    actionOnServerOkResponse,
-    actionOnServerErrorResponse,
+    request: RequestWithoutParams,
+    actionOnServerOkResponse:(param: any) => void,
+    actionOnServerErrorResponse: () => void,
     actionOnRequestFulfilled = () => {}
 ) => {
     try {
@@ -32,8 +33,10 @@ export const makeServerRequest = async (
             console.warn(response)
             actionOnServerErrorResponse()
         }
-    } catch (e) {
-        console.error(e.message)
+    } catch (e: unknown) {
+        if (e instanceof Error){
+            console.error(e.message)
+        }
         actionOnServerErrorResponse()
     } finally {
         actionOnRequestFulfilled()

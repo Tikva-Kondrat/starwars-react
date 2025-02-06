@@ -33,7 +33,7 @@ const Contact = () => {
                 {...register("firstName",
                     nameInputRequirements)}
                 placeholder="Your name.."/>
-            {handleNameInputErrors('firstName', errors)}
+            {handleNameInputErrors(errors.firstName)}
 
             {/* last name*/}
             <label className={"text-center text-xl font-semibold my-2"} htmlFor="lname">Last Name</label>
@@ -42,7 +42,7 @@ const Contact = () => {
                 {...register("lastName",
                     nameInputRequirements)}
                 placeholder="Your last name.."/>
-            {handleNameInputErrors('lastName', errors)}
+            {handleNameInputErrors(errors.lastName)}
 
             {/* planet*/}
             <label className={"text-center text-xl font-semibold my-2"} htmlFor="planet" >Planet</label>
