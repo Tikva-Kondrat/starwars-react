@@ -3,7 +3,7 @@ import {makeServerRequest, requestSkyWalkerDetails} from "../api/apiRequests.js"
 import {getSkyWalkerInfoFromLocalStorage, setSkyWalkerInfoIntoLocalStorage} from "../storage/storingHadling.js";
 import {hasExpired} from "../utils/utilFunctions.js";
 import Spinner from "./utilComponents/Spinner.jsx";
-import WalkerInfo from "./walker/WalkerInfo.jsx";
+import WalkerInfo from "./walker/WalkerInfo.tsx";
 
 const AboutMe = () => {
     const [isLoading, setIsLoading] = useState(false)

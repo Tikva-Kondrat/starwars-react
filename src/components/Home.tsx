@@ -1,4 +1,4 @@
-import Hero from "./walker/Hero.jsx";
+import Hero from "./walker/Hero.tsx";
 import TeamSection from "./TeamSection.jsx";
 import Description from "./Description.jsx";
 

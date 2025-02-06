@@ -1,8 +1,8 @@
-import Home from "./Home.jsx";
+import Home from "./Home.tsx";
 import {navItems} from "../utils/constatns.ts";
-import AboutMe from "./AboutMe.jsx";
-import StarWars from "./StarWars.jsx";
-import Contact from "./contactform/Contact.jsx";
+import AboutMe from "./AboutMe.tsx";
+import StarWars from "./StarWars.tsx";
+import Contact from "./contactform/Contact.tsx";
 
 const Main = ({page}) => {
         switch (page) {

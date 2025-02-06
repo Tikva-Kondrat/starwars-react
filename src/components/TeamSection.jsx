@@ -1,5 +1,5 @@
 import {friends} from "../utils/constatns.ts";
-import Friend from "./Friend.jsx";
+import Friend from "./Friend.tsx";
 
 const TeamSection = () => {
     return (
