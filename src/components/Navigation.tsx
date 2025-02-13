@@ -1,15 +1,13 @@
 import NavItem from "./NavItem.tsx";
 import {navItems} from "../utils/constatns.ts";
-import {SetPage} from "../types/types.t.ts";
 
-const Navigation = ( {changePage}: {changePage: SetPage}) => {
+const Navigation = () => {
     return (
         <nav className="fixed flex top-5 left-8">
             <ul className="flex  gap-2">
-                {navItems.map((item, index) => < NavItem
-                    key = {`NavItem-${index}`}
-                    itemTitle={item}
-                    changePage = {changePage} />)}
+                {navItems.map((item) => < NavItem
+                    key = {item.path}
+                    item={item}/>)}
             </ul>
         </nav>
     );

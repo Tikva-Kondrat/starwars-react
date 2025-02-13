@@ -16,7 +16,7 @@ const Description = () => {
     const makeOpeningCrawlServerRequest = () => {
         setIsLoading(true)
         makeServerRequest(
-            requestRandomEpisodeDetails,
+            requestRandomEpisodeDetails(),
             (data: InfoEpisode):void => {
                 const openingCrawl = data.opening_crawl
                 setDescription(openingCrawl)

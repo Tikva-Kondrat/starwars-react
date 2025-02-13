@@ -1,6 +1,4 @@
-export type SetPage = (title: string) => void;
-
-export type SkyWalkerDetails = {
+export type CharacterDetails = {
     name?: string;
     gender?: string;
     hair_color?: string;
@@ -9,6 +7,13 @@ export type SkyWalkerDetails = {
     mass?: string;
 }
 
+export interface NavigationItem {
+    title: string;
+    path: string;
+}
 
-/*params api*/
-export type RequestWithoutParams = () => Promise<Response>;
+export interface Hero{
+    name: string,
+    img: string,
+    id: string
+}

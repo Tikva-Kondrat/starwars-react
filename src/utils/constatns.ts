@@ -7,8 +7,15 @@ import friend6 from "../assets/images-jpg/friend6.jpg"
 import friend7 from "../assets/images-jpg/friend7.jpg"
 import friend8 from "../assets/images-jpg/friend8.jpg"
 import friend9 from "../assets/images-jpg/friend9.jpg"
+import {NavigationItem} from "../types/types.t.ts";
 
-export const navItems: string[] = ['Home', 'About', 'Start wars', 'Contact'];
+export const navItems: NavigationItem[] = [
+  {title: 'Home', path: 'home'},
+  {title: 'About me', path: 'about_me'},
+  {title: 'Start wars', path: 'star_wars'},
+  {title: 'Contact', path: 'contact'}
+];
+
 export const friends = [friend1, friend2, friend3, friend4, friend5, friend6, friend7, friend8, friend9];
 export const defaultExpireNumOfDays = 30
 export const noInfoMessage = 'Unfortunately, no information'
@@ -17,9 +24,9 @@ export const nameValidationWrongLengthMsg = 'Name and last name must be at least
 export const validationRequiredFieldMsg = 'Required field'
 
 export const nameInputRequirements = {
-    required: true,
-    minLength: 3,
-    pattern: /^[A-Z]+(-)?( )?[A-Z]+$/i
+  required: true,
+  minLength: 3,
+  pattern: /^[A-Z]+(-)?( )?[A-Z]+$/i
 }
 
 export const defaultOpeningCrawl = `It is a period of civil war.

@@ -1,55 +1,59 @@
 import {useEffect, useState} from "react";
-import {makeServerRequest, requestSkyWalkerDetails} from "../api/apiRequests.ts";
-import {getSkyWalkerInfoFromLocalStorage, setSkyWalkerInfoIntoLocalStorage} from "../storage/storingHadling.ts";
+import {makeServerRequest, requestCharacterByIdDetails} from "../api/apiRequests.ts";
 import {hasExpired} from "../utils/utilFunctions.ts";
 import Spinner from "./utilComponents/Spinner.tsx";
-import WalkerInfo from "./walker/WalkerInfo.tsx";
-import {SkyWalkerDetails} from "../types/types.t.ts";
+import CharacterInfo from "./walker/CharacterInfo.tsx";
+import {CharacterDetails} from "../types/types.t.ts";
+import {characters, defaultCharacterId} from "../api/constants.ts";
+import {getCharacterInfoFromLocalStorage, setCharacterInfoIntoLocalStorage} from "../storage/storingHadling.ts";
+import {defaultCharacterShortName} from "../storage/constants.ts";
+import {useParams} from "react-router";
 
 const AboutMe = () => {
   const [isLoading, setIsLoading] = useState(false)
-  const [walkerInfo, setWalkerInfo] = useState<SkyWalkerDetails>({})
+  const [characterInfo, setCharacterInfo] = useState<CharacterDetails>({})
+  const {shortName = defaultCharacterShortName} = useParams();
 
   const getSkyWalkerDetailsFromStorage = () => {
-    const data = getSkyWalkerInfoFromLocalStorage()
+    const data = getCharacterInfoFromLocalStorage(shortName)
     if (!data) return null // no information in storage
     const {dateOfInput, ...details} = JSON.parse(data)
     if (hasExpired(dateOfInput)) return null
     try {
-      return details as SkyWalkerDetails
+      return details as CharacterDetails
     } catch (e) {
-      console.error('error in parsing walker details', e)
+      console.error('error in parsing character details', e)
       return null
     }
-
   }
 
   const makeSkyWalkerDetailsServerRequest = () => {
     setIsLoading(true)
+    const id = characters.get(shortName)?.id ?? defaultCharacterId
     makeServerRequest(
-      requestSkyWalkerDetails,
-      (data: SkyWalkerDetails) => {
-        setWalkerInfo(data)
-        setSkyWalkerInfoIntoLocalStorage(data)
+      requestCharacterByIdDetails(id),
+      (data: CharacterDetails) => {
+        setCharacterInfo(data)
+        setCharacterInfoIntoLocalStorage(shortName, data)
       },
-      () => setWalkerInfo({}),
+      () => setCharacterInfo({}),
       () => setIsLoading(false)
     ).then()
   }
 
   useEffect(
     () => {
-      const walkerDetails = getSkyWalkerDetailsFromStorage()
-      !walkerDetails
+      const characterDetails = getSkyWalkerDetailsFromStorage()
+      !characterDetails
         ? makeSkyWalkerDetailsServerRequest()
-        : setWalkerInfo(walkerDetails)
+        : setCharacterInfo(characterDetails)
     }, []
   )
 
   return (
     isLoading
       ? <Spinner/>
-      : <WalkerInfo info={walkerInfo} />
+      : <CharacterInfo info={characterInfo} />
   );
 };
 

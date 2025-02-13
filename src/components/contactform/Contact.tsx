@@ -12,7 +12,6 @@ interface FormData {
 const Contact = () => {
     const {
         register,
-        //control,
         handleSubmit,
         formState: {errors},
     } = useForm<FormData>();
@@ -23,7 +22,6 @@ const Contact = () => {
 
     return (
         <div className={"flex w-full flex-wrap justify-center items-center my-4 mb-96"}>
-
 
         <form onSubmit={handleSubmit(onSubmit)} className={"flex w-72 flex-col flex-wrap justify-center mb-8 "}>
             {/* first name*/}
@@ -47,9 +45,8 @@ const Contact = () => {
             {/* planet*/}
             <label className={"text-center text-xl font-semibold my-2"} htmlFor="planet" >Planet</label>
             <PlanetSelector
-                {...register("planet")}
+                register = {register}
             />
-
             <input className={"w-full text-xl hover:bg-grean-salat-color my-2 bg-buttom-sub cursor-pointer py-2 px-3 rounded-2xl text-white"} type="submit" value="Submit"/>
         </form>
         </div>

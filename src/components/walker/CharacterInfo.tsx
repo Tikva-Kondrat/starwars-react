@@ -1,8 +1,8 @@
 import Gender from "../utilComponents/Gender.tsx";
 import {noInfoMessage} from "../../utils/constatns.ts";
-import {SkyWalkerDetails} from "../../types/types.t.ts";
+import {CharacterDetails} from "../../types/types.t.ts";
 
-const WalkerInfo = ({info}: {info: SkyWalkerDetails}) => {
+const CharacterInfo = ({info}: {info: CharacterDetails}) => {
   const {name, gender, hair_color, eye_color, height, mass} = info
   return (
     name
@@ -18,4 +18,4 @@ const WalkerInfo = ({info}: {info: SkyWalkerDetails}) => {
   );
 };
 
-export default WalkerInfo;
+export default CharacterInfo;

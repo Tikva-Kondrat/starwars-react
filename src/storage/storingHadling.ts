@@ -1,14 +1,14 @@
-import {keyOpeningCrawl, keySkyWalkerInfo} from "./constants.ts";
-import {SkyWalkerDetails} from "../types/types.t.ts";
+import {keyOpeningCrawl} from "./constants.ts";
+import {CharacterDetails} from "../types/types.t.ts";
 
 export const setOpeningCrawlIntoSessionStorage = (openingCrawl:string) =>
     sessionStorage.setItem(keyOpeningCrawl, openingCrawl)
 
 export const getOpeningCrawlFromSessionStorage = () => sessionStorage.getItem(keyOpeningCrawl)
 
-export const setSkyWalkerInfoIntoLocalStorage = (info:SkyWalkerDetails) => {
+export const setCharacterInfoIntoLocalStorage = (shortName: string, info:CharacterDetails) => {
     const dateOfInput = new Date()
-    localStorage.setItem(keySkyWalkerInfo, JSON.stringify({...info, dateOfInput}))
+    localStorage.setItem(shortName, JSON.stringify({...info, dateOfInput}))
 }
 
-export const getSkyWalkerInfoFromLocalStorage = () => localStorage.getItem(keySkyWalkerInfo)
+export const getCharacterInfoFromLocalStorage = (shortName: string) => localStorage.getItem(shortName)
