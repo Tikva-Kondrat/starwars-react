@@ -9,9 +9,9 @@ import NotFoundPage from "./NotFoundPage.tsx";
 const Main = () => {
   return (
     <Routes>
-      {['/', `${navItems[0].path}`].map(path => <Route key={path} path={path} element={<Home/>}/>)}
-      {[`${navItems[1].path}`, `${navItems[1].path}/:shortName`].map(path => <Route key={path} path={path} element={<AboutMe/>}/>)}
+      <Route index element={<Home/>}/>
       <Route path={`${navItems[0].path}`} element={<Home/>}/>
+      {[`${navItems[1].path}`, `${navItems[1].path}/:shortName`].map(path => <Route key={path} path={path} element={<AboutMe/>}/>)}
       <Route path={`${navItems[2].path}`} element={<StarWars/>}/>
       <Route path={`${navItems[3].path}`} element={<Contact/>}/>
       <Route path={`*`} element={<NotFoundPage/>}/>
