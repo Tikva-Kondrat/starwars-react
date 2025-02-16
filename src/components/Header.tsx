@@ -1,21 +1,13 @@
 import Navigation from "./Navigation.tsx";
-import {useLocation} from "react-router";
 import {characters} from "../api/constants.ts";
+import {useContext} from "react";
+import {ErrorContext, SWContext} from "../shared_data/context.ts";
 
 const Header = () => {
-  const location = useLocation();
-  let title = 'Luke Skywalker'
+  const {isWrongRoute} = useContext(ErrorContext)
+  const {hero} = useContext(SWContext)
 
-  // if this is about page and there's a character name as a param
-  const params = location.pathname.split('/')
-  if (params.indexOf('about_me') !== -1) {
-    params.forEach((param) => {
-      if (characters.has(param.toLowerCase())) {
-        title = characters.get(param.toLowerCase())!.name
-      }
-    })
-  }
-
+  const title = (isWrongRoute) ? "Error" : characters.get(hero)!.name
   return (
     <header className="rounded-t-2xl bg-grey-color">
       <Navigation/>

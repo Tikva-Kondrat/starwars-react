@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {makeServerRequest, requestCharacterByIdDetails} from "../api/apiRequests.ts";
 import {hasExpired} from "../utils/utilFunctions.ts";
 import Spinner from "./utilComponents/Spinner.tsx";
@@ -7,16 +7,18 @@ import {CharacterDetails} from "../types/types.t.ts";
 import {characters} from "../api/constants.ts";
 import {getCharacterInfoFromLocalStorage, setCharacterInfoIntoLocalStorage} from "../storage/storingHadling.ts";
 import {defaultCharacterShortName} from "../storage/constants.ts";
-import {useNavigate, useParams} from "react-router";
+import PageWrapper from "./ui/PageWrapper.tsx";
+import {SWContext} from "../shared_data/context.ts";
 
 const AboutMe = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [characterInfo, setCharacterInfo] = useState<CharacterDetails>({})
-  const {shortName = defaultCharacterShortName} = useParams();
-  const navigate = useNavigate();
+ // const {shortName = defaultCharacterShortName} = useParams();
+ // const navigate = useNavigate();
+  const {hero = defaultCharacterShortName} = useContext(SWContext);
 
   const getSkyWalkerDetailsFromStorage = () => {
-    const data = getCharacterInfoFromLocalStorage(shortName)
+    const data = getCharacterInfoFromLocalStorage(hero)
     if (!data) return null // no information in storage
     const {dateOfInput, ...details} = JSON.parse(data)
     if (hasExpired(dateOfInput)) return null
@@ -28,24 +30,24 @@ const AboutMe = () => {
     }
   }
 
-  const analyzePathAndGetParam = () => {
-    const isShortNameValid = characters.has(shortName)
-    if (!isShortNameValid) {
-      navigate('/404')
-      return null
-    }
-    return characters.get(shortName)!.id
-  }
+  // const analyzePathAndGetParam = () => {
+  //   const isShortNameValid = characters.has(shortName)
+  //   if (!isShortNameValid) {
+  //     navigate('/404')
+  //     return null
+  //   }
+  //   return characters.get(shortName)!.id
+  // }
 
   const makeSkyWalkerDetailsServerRequest = () => {
-    const id = analyzePathAndGetParam()
-    if (!id) return
+    //const id = analyzePathAndGetParam()
+    const id = characters.get(hero)?.id
     setIsLoading(true)
     makeServerRequest(
-      requestCharacterByIdDetails(id),
+      requestCharacterByIdDetails(id!),
       (data: CharacterDetails) => {
         setCharacterInfo(data)
-        setCharacterInfoIntoLocalStorage(shortName, data)
+        setCharacterInfoIntoLocalStorage(hero, data)
       },
       () => setCharacterInfo({}),
       () => setIsLoading(false)
@@ -68,4 +70,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default PageWrapper(AboutMe);

@@ -2,6 +2,7 @@ import PlanetSelector from "./PlanetSelector.tsx";
 import {useForm} from "react-hook-form";
 import {nameInputRequirements} from "../../utils/constatns.ts";
 import {handleNameInputErrors} from "./formErrorHandling.tsx";
+import PageWrapper from "../ui/PageWrapper.tsx";
 
 interface FormData {
   firstName: string;
@@ -55,4 +56,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default PageWrapper(Contact);

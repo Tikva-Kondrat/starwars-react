@@ -12,7 +12,7 @@ export interface NavigationItem {
     path: string;
 }
 
-export interface Hero{
+export interface HeroDetails {
     name: string,
     img: string,
     id: string

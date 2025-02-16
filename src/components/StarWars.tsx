@@ -1,4 +1,5 @@
 import {starWarsInfo} from "../utils/constatns.ts";
+import PageWrapper from "./ui/PageWrapper.tsx";
 
 const StarWars = () => {
     return (
@@ -8,4 +9,4 @@ const StarWars = () => {
     );
 };
 
-export default StarWars;
+export default PageWrapper(StarWars);

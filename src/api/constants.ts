@@ -7,14 +7,14 @@ import friend5 from "../assets/images-jpg/friend5.jpg";
 import friend9 from "../assets/images-jpg/friend9.jpg";
 import friend3 from "../assets/images-jpg/friend3.jpg";
 import friend7 from "../assets/images-jpg/friend7.jpg";
-import friend0 from "../assets/images-jpg/friend7.jpg";
-import {Hero} from "../types/types.t.ts";
+import friend0 from "../assets/images-jpg/friend0.jpg";
+import {HeroDetails} from "../types/types.t.ts";
 
 export const base_url = 'https://sw-info-api.herokuapp.com';
 export const version = '/v1';
 export const friends_url = `${base_url + version}/peoples/`
 
-export const characters = new Map<string, Hero>(
+export const characters = new Map<string, HeroDetails>(
   [
     ['luke', {
       name: "Luke Skywalker",
@@ -33,7 +33,7 @@ export const characters = new Map<string, Hero>(
     }],
     ['leia', {
       name: "Leia Organa",
-      img: friend6,
+      img: friend9,
       id: '5'
     }],
     ['obi_wan', {
@@ -53,7 +53,7 @@ export const characters = new Map<string, Hero>(
     }],
     ['yoda', {
       name: "Yoda",
-      img: friend9,
+      img: friend6,
       id: `0`
     }],
     ['ewok', {
