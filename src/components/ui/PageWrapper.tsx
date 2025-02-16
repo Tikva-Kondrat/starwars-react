@@ -11,13 +11,13 @@ const PageWrapper = (WrappedComponent: React.FunctionComponent) => {
     const {shortName = defaultCharacterShortName} = useParams();
     const {changeHero} = useContext(SWContext);
     const {setIsWrongRoute} = useContext(ErrorContext);
+    
+    setIsWrongRoute(!characters.has(shortName))
 
     useEffect(() => {
       if (!characters.has(shortName)) {
-        setIsWrongRoute(true);
         return
       }
-      setIsWrongRoute(false);
       changeHero(shortName);
     }, [shortName]);
 
